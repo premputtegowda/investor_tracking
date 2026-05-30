@@ -82,39 +82,6 @@
                justify-content: center; }
   .stage-key b { color: #0d2240; }
 
-  /* Target progress bar (per sponsor) */
-  .target-section { padding: 8px 14px 10px; background: rgba(255,255,255,0.5);
-                    border-top: 1px solid rgba(0,0,0,0.05); }
-  .target-amounts { display: flex; justify-content: flex-end;
-                    font-size: 11px; color: #0d2240; font-weight: 700;
-                    margin-bottom: 6px; }
-  .target-bar-wrap { position: relative; height: 14px;
-                     margin: 22px 6px 24px; }
-  .target-bar { position: absolute; inset: 0; border-radius: 7px;
-                background: linear-gradient(to right, var(--start-color, #d62728), #2ca02c);
-                box-shadow: inset 0 1px 2px rgba(0,0,0,0.15); }
-  .target-marker { position: absolute; transform: translateX(-50%);
-                   font-size: 10px; font-weight: 700; white-space: nowrap;
-                   line-height: 1.1; }
-  .target-marker.funded { bottom: 100%; margin-bottom: 1px; color: #0d4f0d; }
-  .target-marker.funded::after { content: "\25BC"; display: block;
-                                 text-align: center; font-size: 9px;
-                                 line-height: 1; }
-  .target-marker.committed { top: 100%; margin-top: 1px; color: #1f3a5f; }
-  .target-marker.committed::before { content: "\25B2"; display: block;
-                                     text-align: center; font-size: 9px;
-                                     line-height: 1; }
-  .target-marker.edge-right { transform: translateX(-100%); }
-  .target-marker.edge-right::after,
-  .target-marker.edge-right::before { text-align: right; }
-  .target-status { font-size: 11px; color: #555; text-align: center;
-                   margin-top: 8px; display: flex; flex-direction: column;
-                   gap: 3px; align-items: center; }
-  .target-status > div { line-height: 1.4; }
-  .target-status b { color: #0d2240; font-weight: 700; }
-  .target-status b.gap { color: #a00000; }
-  .target-status .reached { color: #1a6b1a; font-weight: 700; }
-
   /* Mobile breakpoint: stack the 3 columns vertically inside each row */
   @media (max-width: 640px) {
     .container { padding: 6px; }
@@ -141,7 +108,7 @@
 <body>
   <div class="container">
     <h1>Investor Tracking</h1>
-    <div class="as-of">As of May 28, 2026 at 7:48 AM PDT</div>
+    <div class="as-of">As of May 30, 2026 at 6:34 AM PDT</div>
     <div class="top-legend">
       <div class="color-key">
         <span class="k"><span class="chip" style="background:#d62728"></span>Unfunded</span>
@@ -156,119 +123,9 @@
     
     <section class="sponsor" style="--lane-color:#e8eded">
       <header>
-        <span class="sp-name">Mattanza Capital Partners</span>
-        <span class="sp-stats"><b class="gap">$645k gap</b> · 8 to follow up</span>
-      </header>
-      <div class="target-section" style="--start-color: hsl(70, 66%, 44%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $1.5M</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:58.0%">$870k funded</div>
-          <div class="target-marker committed edge-right" style="left:100%">$1,515k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Collect <b class="gap">$645k</b> from <b>8 committed investors</b></div>
-        </div>
-      </div>
-      <div class="stage-header">
-        <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
-        <div class="daybar-header">Days waiting</div>
-      </div>
-      <div class="row unfunded" title="Document signing started">
-        <div class="name">Michael Messner<span class="amt">$100k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:9.0%"></div></div>
-          <span class="days-label">8d</span>
-        </div>
-      </div><div class="row funded" title="Funds fully received">
-        <div class="name">Brian Madzarevic<span class="amt">$100k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:10.1%"></div></div>
-          <span class="days-label">9d</span>
-        </div>
-      </div><div class="row unfunded" title="Investment started">
-        <div class="name">Danna Basson<span class="amt">$0k</span></div>
-        <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:21.3%"></div></div>
-          <span class="days-label">19d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Ha Nguyen<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:86.5%"></div></div>
-          <span class="days-label">77d</span>
-        </div>
-      </div><div class="row unfunded" title="Document signing started">
-        <div class="name">Matthew Rice<span class="amt">$50k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:86.5%"></div></div>
-          <span class="days-label">77d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Frances Roberts<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:87.6%"></div></div>
-          <span class="days-label">78d</span>
-        </div>
-      </div><div class="row funded" title="Funds fully received">
-        <div class="name">Danna Basson #2<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:87.6%"></div></div>
-          <span class="days-label">78d</span>
-        </div>
-      </div><div class="row unfunded" title="Committed">
-        <div class="name">Chris Werry<span class="amt">$100k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:91.0%"></div></div>
-          <span class="days-label">81d</span>
-        </div>
-      </div><div class="row unfunded" title="Funds partially received">
-        <div class="name">Marc O&#x27;Bryan<span class="amt">$340k</span></div>
-        <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:94.4%"></div></div>
-          <span class="days-label">84d</span>
-        </div>
-      </div><div class="row unfunded" title="Committed">
-        <div class="name">Carla Haller<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:94.4%"></div></div>
-          <span class="days-label">84d</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="sponsor" style="--lane-color:#ede8e3">
-      <header>
         <span class="sp-name">Fast Fire Capital Llc</span>
-        <span class="sp-stats"><b class="gap">$575k gap</b> · 9 to follow up</span>
+        <span class="sp-stats"><b class="gap">$550k gap</b> · 8 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(56, 68%, 45%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $1.5M</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:47.0%">$705k funded</div>
-          <div class="target-marker committed" style="left:85.3%">$1,280k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Bring in <b>3 new investors</b> at <b>$75k each</b></div>
-          <div>Collect <b class="gap">$575k</b> from <b>9 committed investors</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -278,78 +135,112 @@
         <div class="name">James Boyd<span class="amt">$0k</span></div>
         <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:2.2%"></div></div>
-          <span class="days-label">2d</span>
+          <div class="daybar-track"><div class="daybar" style="width:4.4%"></div></div>
+          <span class="days-label">4d</span>
         </div>
       </div><div class="row unfunded" title="Funding instructions sent">
         <div class="name">ABHISHEK AGRAWAL<span class="amt">$50k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:6.7%"></div></div>
-          <span class="days-label">6d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Andrew Barbera<span class="amt">$25k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:9.0%"></div></div>
+          <div class="daybar-track"><div class="daybar" style="width:8.8%"></div></div>
           <span class="days-label">8d</span>
         </div>
       </div><div class="row partial" title="1 of 3 signed">
         <div class="name">Kenji Asakura<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#ff8c00;border-color:#ff8c00">1/3</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:10.1%"></div></div>
-          <span class="days-label">9d</span>
-        </div>
-      </div><div class="row funded" title="Funds fully received">
-        <div class="name">Michael Karp<span class="amt">$100k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:15.7%"></div></div>
-          <span class="days-label">14d</span>
-        </div>
-      </div><div class="row funded" title="Funds fully received">
-        <div class="name">Yuna Larrabee<span class="amt">$25k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:15.7%"></div></div>
-          <span class="days-label">14d</span>
+          <div class="daybar-track"><div class="daybar" style="width:12.1%"></div></div>
+          <span class="days-label">11d</span>
         </div>
       </div><div class="row unfunded" title="Funding instructions sent">
         <div class="name">Joseph Chun<span class="amt">$100k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:25.8%"></div></div>
-          <span class="days-label">23d</span>
+          <div class="daybar-track"><div class="daybar" style="width:27.5%"></div></div>
+          <span class="days-label">25d</span>
         </div>
       </div><div class="row unfunded" title="Investment started">
         <div class="name">Mary Gorman<span class="amt">$0k</span></div>
         <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:27.0%"></div></div>
-          <span class="days-label">24d</span>
+          <div class="daybar-track"><div class="daybar" style="width:28.6%"></div></div>
+          <span class="days-label">26d</span>
         </div>
       </div><div class="row unfunded" title="Funding instructions sent">
         <div class="name">Kommula Rao<span class="amt">$100k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:82.0%"></div></div>
-          <span class="days-label">73d</span>
+          <div class="daybar-track"><div class="daybar" style="width:82.4%"></div></div>
+          <span class="days-label">75d</span>
         </div>
       </div><div class="row unfunded" title="Committed">
         <div class="name">Pallavi Kamra<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:94.4%"></div></div>
-          <span class="days-label">84d</span>
+          <div class="daybar-track"><div class="daybar" style="width:94.5%"></div></div>
+          <span class="days-label">86d</span>
         </div>
       </div><div class="row unfunded" title="Committed">
         <div class="name">Heide Rodgers<span class="amt">$150k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:94.4%"></div></div>
-          <span class="days-label">84d</span>
+          <div class="daybar-track"><div class="daybar" style="width:94.5%"></div></div>
+          <span class="days-label">86d</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor" style="--lane-color:#ede8e3">
+      <header>
+        <span class="sp-name">Mattanza Capital Partners</span>
+        <span class="sp-stats"><b class="gap">$545k gap</b> · 6 to follow up</span>
+      </header>
+      <div class="stage-header">
+        <div class="name-col"></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
+        <div class="daybar-header">Days waiting</div>
+      </div>
+      <div class="row unfunded" title="Funding instructions sent">
+        <div class="name">Ha Nguyen<span class="amt">$75k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:86.8%"></div></div>
+          <span class="days-label">79d</span>
+        </div>
+      </div><div class="row unfunded" title="Document signing started">
+        <div class="name">Matthew Rice<span class="amt">$50k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:86.8%"></div></div>
+          <span class="days-label">79d</span>
+        </div>
+      </div><div class="row unfunded" title="Funding instructions sent">
+        <div class="name">Frances Roberts<span class="amt">$75k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:87.9%"></div></div>
+          <span class="days-label">80d</span>
+        </div>
+      </div><div class="row unfunded" title="Committed">
+        <div class="name">Chris Werry<span class="amt">$100k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:91.2%"></div></div>
+          <span class="days-label">83d</span>
+        </div>
+      </div><div class="row unfunded" title="Funds partially received">
+        <div class="name">Marc O&#x27;Bryan<span class="amt">$340k</span></div>
+        <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:94.5%"></div></div>
+          <span class="days-label">86d</span>
+        </div>
+      </div><div class="row unfunded" title="Committed">
+        <div class="name">Carla Haller<span class="amt">$75k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:94.5%"></div></div>
+          <span class="days-label">86d</span>
         </div>
       </div>
     </section>
@@ -359,19 +250,6 @@
         <span class="sp-name">James Lennon</span>
         <span class="sp-stats"><b class="gap">$515k gap</b> · 3 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(24, 72%, 48%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $500k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:20.0%">$100k funded</div>
-          <div class="target-marker committed edge-right" style="left:100%">$615k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Collect <b class="gap">$515k</b> from <b>3 committed investors</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -381,22 +259,22 @@
         <div class="name">Deepanshu Jain<span class="amt">$100k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:61.8%"></div></div>
-          <span class="days-label">55d</span>
+          <div class="daybar-track"><div class="daybar" style="width:62.6%"></div></div>
+          <span class="days-label">57d</span>
         </div>
       </div><div class="row unfunded" title="Funding instructions sent">
         <div class="name">Nathan Mullins<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:71.9%"></div></div>
-          <span class="days-label">64d</span>
+          <div class="daybar-track"><div class="daybar" style="width:72.5%"></div></div>
+          <span class="days-label">66d</span>
         </div>
       </div><div class="row unfunded" title="Funding instructions sent">
         <div class="name">James Lennon<span class="amt">$340k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:87.6%"></div></div>
-          <span class="days-label">78d</span>
+          <div class="daybar-track"><div class="daybar" style="width:87.9%"></div></div>
+          <span class="days-label">80d</span>
         </div>
       </div>
     </section>
@@ -404,228 +282,42 @@
     <section class="sponsor" style="--lane-color:#ede8eb">
       <header>
         <span class="sp-name">Alara Equity Llc</span>
-        <span class="sp-stats"><b class="gap">$125k gap</b> · 2 to follow up</span>
+        <span class="sp-stats"><b class="gap">$200k gap</b> · 3 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $250k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded edge-right" style="left:100%">$475k funded</div>
-          <div class="target-marker committed edge-right" style="left:100%">$600k committed</div>
-        </div>
-        <div class="target-status">
-          <div class="reached">&#10003; Target reached &middot; $475k funded (190%)</div>
-          <div>Collect <b class="gap">$125k</b> from <b>2 committed investors</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" title="Funding instructions sent">
+        <div class="name">Ali Azeem<span class="amt">$75k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:2.2%"></div></div>
+          <span class="days-label">2d</span>
+        </div>
+      </div><div class="row unfunded" title="Funding instructions sent">
         <div class="name">Tawfik Hamati<span class="amt">$50k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:22.5%"></div></div>
-          <span class="days-label">20d</span>
+          <div class="daybar-track"><div class="daybar" style="width:24.2%"></div></div>
+          <span class="days-label">22d</span>
         </div>
-      </div><div class="row unfunded" title="Document signing started">
-        <div class="name">Ali Azeem<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+      </div><div class="row unfunded" title="Funding instructions sent">
+        <div class="name">Ali Azeem #2<span class="amt">$75k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:65.2%"></div></div>
-          <span class="days-label">58d</span>
+          <div class="daybar-track"><div class="daybar" style="width:65.9%"></div></div>
+          <span class="days-label">60d</span>
         </div>
       </div>
     </section>
 
     <section class="sponsor" style="--lane-color:#eaedeb">
       <header>
-        <span class="sp-name">Bh Group</span>
-        <span class="sp-stats"><b class="gap">$125k gap</b> · 2 to follow up</span>
-      </header>
-      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $250k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded edge-right" style="left:100%">$725k funded</div>
-          <div class="target-marker committed edge-right" style="left:100%">$850k committed</div>
-        </div>
-        <div class="target-status">
-          <div class="reached">&#10003; Target reached &middot; $725k funded (290%)</div>
-          <div>Collect <b class="gap">$125k</b> from <b>2 committed investors</b></div>
-        </div>
-      </div>
-      <div class="stage-header">
-        <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
-        <div class="daybar-header">Days waiting</div>
-      </div>
-      <div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Benjamin Hirsh<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:6.7%"></div></div>
-          <span class="days-label">6d</span>
-        </div>
-      </div><div class="row funded" title="Funds fully received">
-        <div class="name">Ashley Fidler<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:49.4%"></div></div>
-          <span class="days-label">44d</span>
-        </div>
-      </div><div class="row unfunded" title="Committed">
-        <div class="name">RAM JADONATH<span class="amt">$50k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:100.0%"></div></div>
-          <span class="days-label">89d</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="sponsor" style="--lane-color:#edebe6">
-      <header>
-        <span class="sp-name">Manka Capital, Chirag Chaudhari</span>
-        <span class="sp-stats"><b class="gap">$120k gap</b> · 4 to follow up</span>
-      </header>
-      <div class="target-section" style="--start-color: hsl(28, 72%, 48%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $1.5M</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:23.3%">$350k funded</div>
-          <div class="target-marker committed" style="left:31.3%">$470k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Bring in <b>14 new investors</b> at <b>$75k each</b></div>
-          <div>Collect <b class="gap">$120k</b> from <b>4 committed investors</b></div>
-        </div>
-      </div>
-      <div class="stage-header">
-        <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
-        <div class="daybar-header">Days waiting</div>
-      </div>
-      <div class="row funded" title="Funds fully received">
-        <div class="name">Michael Tiller<span class="amt">$75k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:9.0%"></div></div>
-          <span class="days-label">8d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Sandeep Sidana<span class="amt">$25k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:11.2%"></div></div>
-          <span class="days-label">10d</span>
-        </div>
-      </div><div class="row funded" title="Funds fully received">
-        <div class="name">Emmanuel Gorospe<span class="amt">$25k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:13.5%"></div></div>
-          <span class="days-label">12d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Prabha Mantena<span class="amt">$25k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:13.5%"></div></div>
-          <span class="days-label">12d</span>
-        </div>
-      </div><div class="row unfunded" title="Investment started">
-        <div class="name">Parag Shah<span class="amt">$50k</span></div>
-        <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:34.8%"></div></div>
-          <span class="days-label">31d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Chirag Chaudhari<span class="amt">$20k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:68.5%"></div></div>
-          <span class="days-label">61d</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="sponsor" style="--lane-color:#ebe9e6">
-      <header>
-        <span class="sp-name">Prime Real Ventures</span>
-        <span class="sp-stats"><b class="gap">$100k gap</b> · 2 to follow up</span>
-      </header>
-      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $250k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded edge-right" style="left:100%">$250k funded</div>
-          <div class="target-marker committed edge-right" style="left:100%">$350k committed</div>
-        </div>
-        <div class="target-status">
-          <div class="reached">&#10003; Target reached &middot; $250k funded (100%)</div>
-          <div>Collect <b class="gap">$100k</b> from <b>2 committed investors</b></div>
-        </div>
-      </div>
-      <div class="stage-header">
-        <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
-        <div class="daybar-header">Days waiting</div>
-      </div>
-      <div class="row funded" title="Funds fully received">
-        <div class="name">Muhammad Hamza Rafique<span class="amt">$50k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:9.0%"></div></div>
-          <span class="days-label">8d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Ommar Afzal<span class="amt">$50k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:74.2%"></div></div>
-          <span class="days-label">66d</span>
-        </div>
-      </div><div class="row unfunded" title="Funding instructions sent">
-        <div class="name">Hassan Kaleem<span class="amt">$50k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:78.7%"></div></div>
-          <span class="days-label">70d</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="sponsor" style="--lane-color:#ebebeb">
-      <header>
         <span class="sp-name">Prysm2025</span>
         <span class="sp-stats"><b class="gap">$100k gap</b> · 2 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(42, 70%, 47%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $500k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:35.0%">$175k funded</div>
-          <div class="target-marker committed" style="left:55.0%">$275k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Bring in <b>3 new investors</b> at <b>$75k each</b></div>
-          <div>Collect <b class="gap">$100k</b> from <b>2 committed investors</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -635,38 +327,24 @@
         <div class="name">Merrell Sami<span class="amt">$25k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:40.4%"></div></div>
-          <span class="days-label">36d</span>
+          <div class="daybar-track"><div class="daybar" style="width:41.8%"></div></div>
+          <span class="days-label">38d</span>
         </div>
       </div><div class="row unfunded" title="Funding instructions sent">
         <div class="name">Mina Meawad<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:91.0%"></div></div>
-          <span class="days-label">81d</span>
+          <div class="daybar-track"><div class="daybar" style="width:91.2%"></div></div>
+          <span class="days-label">83d</span>
         </div>
       </div>
     </section>
 
-    <section class="sponsor" style="--lane-color:#ede5e5">
+    <section class="sponsor" style="--lane-color:#edebe6">
       <header>
         <span class="sp-name">Sai Capital Llc</span>
         <span class="sp-stats"><b class="gap">$100k gap</b> · 1 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(34, 71%, 47%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $1.5M</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:28.3%">$425k funded</div>
-          <div class="target-marker committed" style="left:35.0%">$525k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Bring in <b>13 new investors</b> at <b>$75k each</b></div>
-          <div>Collect <b class="gap">$100k</b> from <b>1 committed investor</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -676,38 +354,58 @@
         <div class="name">Aarati Sawhney<span class="amt">$100k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:9.0%"></div></div>
-          <span class="days-label">8d</span>
+          <div class="daybar-track"><div class="daybar" style="width:11.0%"></div></div>
+          <span class="days-label">10d</span>
         </div>
       </div><div class="row funded" title="Funds fully received">
         <div class="name">Avnish Bhatnagar<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:52.8%"></div></div>
-          <span class="days-label">47d</span>
+          <div class="daybar-track"><div class="daybar" style="width:53.8%"></div></div>
+          <span class="days-label">49d</span>
         </div>
       </div>
     </section>
 
-    <section class="sponsor" style="--lane-color:#e5e8ed">
+    <section class="sponsor" style="--lane-color:#ebe9e6">
+      <header>
+        <span class="sp-name">Manka Capital, Chirag Chaudhari</span>
+        <span class="sp-stats"><b class="gap">$95k gap</b> · 3 to follow up</span>
+      </header>
+      <div class="stage-header">
+        <div class="name-col"></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
+        <div class="daybar-header">Days waiting</div>
+      </div>
+      <div class="row unfunded" title="Funding instructions sent">
+        <div class="name">Sandeep Sidana<span class="amt">$25k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:13.2%"></div></div>
+          <span class="days-label">12d</span>
+        </div>
+      </div><div class="row unfunded" title="Investment started">
+        <div class="name">Parag Shah<span class="amt">$50k</span></div>
+        <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:36.3%"></div></div>
+          <span class="days-label">33d</span>
+        </div>
+      </div><div class="row unfunded" title="Funding instructions sent">
+        <div class="name">Chirag Chaudhari<span class="amt">$20k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:69.2%"></div></div>
+          <span class="days-label">63d</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor" style="--lane-color:#ebebeb">
       <header>
         <span class="sp-name">Optic Point</span>
         <span class="sp-stats"><b class="gap">$80k gap</b> · 1 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(74, 66%, 44%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $250k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:62.0%">$155k funded</div>
-          <div class="target-marker committed" style="left:94.0%">$235k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Bring in <b>1 new $75k investor</b></div>
-          <div>Collect <b class="gap">$80k</b> from <b>1 committed investor</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -717,8 +415,55 @@
         <div class="name">Janice Lee<span class="amt">$80k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:34.8%"></div></div>
-          <span class="days-label">31d</span>
+          <div class="daybar-track"><div class="daybar" style="width:36.3%"></div></div>
+          <span class="days-label">33d</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor" style="--lane-color:#ede5e5">
+      <header>
+        <span class="sp-name">New Horizon Capital Group</span>
+        <span class="sp-stats"><b class="gap">$75k gap</b> · 1 to follow up</span>
+      </header>
+      <div class="stage-header">
+        <div class="name-col"></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
+        <div class="daybar-header">Days waiting</div>
+      </div>
+      <div class="row unfunded" title="Document signing started">
+        <div class="name">Jason Levy<span class="amt">$75k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:13.2%"></div></div>
+          <span class="days-label">12d</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor" style="--lane-color:#e5e8ed">
+      <header>
+        <span class="sp-name">Bh Group</span>
+        <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
+      </header>
+      <div class="stage-header">
+        <div class="name-col"></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
+        <div class="daybar-header">Days waiting</div>
+      </div>
+      <div class="row funded" title="Funds fully received">
+        <div class="name">Ashley Fidler<span class="amt">$75k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:50.5%"></div></div>
+          <span class="days-label">46d</span>
+        </div>
+      </div><div class="row unfunded" title="Committed">
+        <div class="name">RAM JADONATH<span class="amt">$50k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+        <div class="daybar-wrap">
+          <div class="daybar-track"><div class="daybar" style="width:100.0%"></div></div>
+          <span class="days-label">91d</span>
         </div>
       </div>
     </section>
@@ -728,20 +473,6 @@
         <span class="sp-name">K&amp;G Capital</span>
         <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $700k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded edge-right" style="left:100%">$1,175k funded</div>
-          <div class="target-marker committed edge-right" style="left:100%">$1,225k committed</div>
-        </div>
-        <div class="target-status">
-          <div class="reached">&#10003; Target reached &middot; $1,175k funded (168%)</div>
-          <div>Collect <b class="gap">$50k</b> from <b>1 committed investor</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -751,88 +482,42 @@
         <div class="name">Ankush Ratwani<span class="amt">$50k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:10.1%"></div></div>
-          <span class="days-label">9d</span>
+          <div class="daybar-track"><div class="daybar" style="width:12.1%"></div></div>
+          <span class="days-label">11d</span>
         </div>
       </div><div class="row funded" title="Signed">
         <div class="name">Gurshan Bansal<span class="amt">$50k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:41.6%"></div></div>
-          <span class="days-label">37d</span>
+          <div class="daybar-track"><div class="daybar" style="width:42.9%"></div></div>
+          <span class="days-label">39d</span>
         </div>
       </div><div class="row funded" title="Signed">
         <div class="name">Patrick Kosciuk<span class="amt">$100k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:93.3%"></div></div>
-          <span class="days-label">83d</span>
+          <div class="daybar-track"><div class="daybar" style="width:93.4%"></div></div>
+          <span class="days-label">85d</span>
         </div>
       </div>
     </section>
 
     <section class="sponsor" style="--lane-color:#ebe5ed">
       <header>
-        <span class="sp-name">New Horizon Capital Group</span>
-        <span class="sp-stats"><b class="gap">$0k gap</b> · 1 to follow up</span>
+        <span class="sp-name">Prime Real Ventures</span>
+        <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
       </header>
-      <div class="target-section" style="--start-color: hsl(18, 73%, 49%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $500k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded" style="left:15.0%">$75k funded</div>
-          <div class="target-marker committed" style="left:15.0%">$75k committed</div>
-        </div>
-        <div class="target-status">
-          <div>Bring in <b>6 new investors</b> at <b>$75k each</b></div>
-        </div>
-      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
-      <div class="row unfunded" title="Investment started">
-        <div class="name">Jason Levy<span class="amt">$0k</span></div>
-        <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
+      <div class="row unfunded" title="Funding instructions sent">
+        <div class="name">Hassan Kaleem<span class="amt">$50k</span></div>
+        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:11.2%"></div></div>
-          <span class="days-label">10d</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="sponsor" style="--lane-color:#ede9e3">
-      <header>
-        <span class="sp-name">Rashmi And Prem</span>
-        <span class="sp-stats"><b class="gap">$0k gap</b> · 0 to follow up</span>
-      </header>
-      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
-        <div class="target-amounts">
-          <span class="target-amt">Target $250k</span>
-        </div>
-        <div class="target-bar-wrap">
-          <div class="target-bar"></div>
-          <div class="target-marker funded edge-right" style="left:100%">$350k funded</div>
-          <div class="target-marker committed edge-right" style="left:100%">$350k committed</div>
-        </div>
-        <div class="target-status">
-          <div class="reached">&#10003; Target reached &middot; $350k funded (140%)</div>
-        </div>
-      </div>
-      <div class="stage-header">
-        <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
-        <div class="daybar-header">Days waiting</div>
-      </div>
-      <div class="row funded" title="Funds fully received">
-        <div class="name">Aishwarya Yagnik<span class="amt">$100k</span></div>
-        <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot current" style="background:#2ca02c;border-color:#2ca02c"></div><div class="line"></div><div class="dot future"></div></div>
-        <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:100.0%"></div></div>
-          <span class="days-label">89d</span>
+          <div class="daybar-track"><div class="daybar" style="width:79.1%"></div></div>
+          <span class="days-label">72d</span>
         </div>
       </div>
     </section>
