@@ -82,6 +82,40 @@
                justify-content: center; }
   .stage-key b { color: #0d2240; }
 
+  /* Target progress bar (per sponsor) */
+  .target-section { padding: 8px 14px 10px; background: rgba(255,255,255,0.5);
+                    border-top: 1px solid rgba(0,0,0,0.05); }
+  .target-amounts { display: flex; justify-content: flex-end;
+                    font-size: 11px; color: #0d2240; font-weight: 700;
+                    margin-bottom: 6px; }
+  .target-bar-wrap { position: relative; height: 14px;
+                     margin: 22px 6px 24px; }
+  .target-bar { position: absolute; inset: 0; border-radius: 7px;
+                background: linear-gradient(to right, var(--start-color, #d62728), #2ca02c);
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.15); }
+  .target-marker { position: absolute; transform: translateX(-50%);
+                   font-size: 10px; font-weight: 700; white-space: nowrap;
+                   line-height: 1.1; }
+  .target-marker.funded { bottom: 100%; margin-bottom: 1px; color: #0d4f0d; }
+  .target-marker.funded::after { content: "\25BC"; display: block;
+                                 text-align: center; font-size: 9px;
+                                 line-height: 1; }
+  .target-marker.committed { top: 100%; margin-top: 1px; color: #1f3a5f; }
+  .target-marker.committed::before { content: "\25B2"; display: block;
+                                     text-align: center; font-size: 9px;
+                                     line-height: 1; }
+  .target-marker.edge-right { transform: translateX(-100%); }
+  .target-marker.edge-right::after,
+  .target-marker.edge-right::before { text-align: right; }
+  .target-status { font-size: 11px; color: #555; text-align: center;
+                   margin-top: 8px; display: flex; flex-direction: column;
+                   gap: 3px; align-items: center; }
+  .target-status > div { line-height: 1.4; }
+  .target-status b { color: #0d2240; font-weight: 700; }
+  .target-status b.gap { color: #a00000; }
+  .target-status .reached { color: #1a6b1a; font-weight: 700; }
+
+
   /* Mobile breakpoint: stack the 3 columns vertically inside each row */
   @media (max-width: 640px) {
     .container { padding: 6px; }
@@ -126,6 +160,19 @@
         <span class="sp-name">Fast Fire Capital Llc</span>
         <span class="sp-stats"><b class="gap">$550k gap</b> · 8 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(58, 68%, 45%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $1.5M</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:48.7%">$730k funded</div>
+          <div class="target-marker committed" style="left:85.3%">$1,280k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$550k</b> from <b>8 committed investors</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -195,6 +242,19 @@
         <span class="sp-name">Mattanza Capital Partners</span>
         <span class="sp-stats"><b class="gap">$545k gap</b> · 6 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(70, 66%, 44%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $1.5M</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:58.0%">$870k funded</div>
+          <div class="target-marker committed" style="left:94.3%">$1,415k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$545k</b> from <b>6 committed investors</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -229,7 +289,7 @@
           <span class="days-label">83d</span>
         </div>
       </div><div class="row unfunded" title="Funds partially received">
-        <div class="name">Marc O&#x27;Bryan<span class="amt">$340k</span></div>
+        <div class="name">Marc O&#x27;Bryan<span class="amt">$170k / $340k</span></div>
         <div class="track"><div class="dot current" style="background:#d62728;border-color:#d62728"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
           <div class="daybar-track"><div class="daybar" style="width:94.5%"></div></div>
@@ -250,6 +310,19 @@
         <span class="sp-name">James Lennon</span>
         <span class="sp-stats"><b class="gap">$515k gap</b> · 3 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(24, 72%, 48%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $500k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:20.0%">$100k funded</div>
+          <div class="target-marker committed edge-right" style="left:100%">$615k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$515k</b> from <b>3 committed investors</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -284,6 +357,20 @@
         <span class="sp-name">Alara Equity Llc</span>
         <span class="sp-stats"><b class="gap">$200k gap</b> · 3 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $250k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded edge-right" style="left:100%">$475k funded</div>
+          <div class="target-marker committed edge-right" style="left:100%">$675k committed</div>
+        </div>
+        <div class="target-status">
+          <div class="reached">&#10003; Target reached &middot; $475k funded (190%)</div>
+          <div>Collect <b class="gap">$200k</b> from <b>3 committed investors</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -318,6 +405,19 @@
         <span class="sp-name">Prysm2025</span>
         <span class="sp-stats"><b class="gap">$100k gap</b> · 2 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(42, 70%, 46%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $500k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:35.0%">$175k funded</div>
+          <div class="target-marker committed" style="left:55.0%">$275k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$100k</b> from <b>2 committed investors</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -345,6 +445,19 @@
         <span class="sp-name">Sai Capital Llc</span>
         <span class="sp-stats"><b class="gap">$100k gap</b> · 1 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(34, 71%, 47%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $1.5M</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:28.3%">$425k funded</div>
+          <div class="target-marker committed" style="left:35.0%">$525k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$100k</b> from <b>1 committed investor</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -365,6 +478,19 @@
         <span class="sp-name">Manka Capital, Chirag Chaudhari</span>
         <span class="sp-stats"><b class="gap">$95k gap</b> · 3 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(30, 72%, 48%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $1.5M</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:25.0%">$375k funded</div>
+          <div class="target-marker committed" style="left:31.3%">$470k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$95k</b> from <b>3 committed investors</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -399,6 +525,19 @@
         <span class="sp-name">Optic Point</span>
         <span class="sp-stats"><b class="gap">$80k gap</b> · 1 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(74, 66%, 44%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $250k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:62.0%">$155k funded</div>
+          <div class="target-marker committed" style="left:94.0%">$235k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$80k</b> from <b>1 committed investor</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -419,6 +558,19 @@
         <span class="sp-name">New Horizon Capital Group</span>
         <span class="sp-stats"><b class="gap">$75k gap</b> · 1 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(18, 73%, 48%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $500k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded" style="left:15.0%">$75k funded</div>
+          <div class="target-marker committed" style="left:30.0%">$150k committed</div>
+        </div>
+        <div class="target-status">
+          <div>Collect <b class="gap">$75k</b> from <b>1 committed investor</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -439,6 +591,20 @@
         <span class="sp-name">Bh Group</span>
         <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $250k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded edge-right" style="left:100%">$800k funded</div>
+          <div class="target-marker committed edge-right" style="left:100%">$850k committed</div>
+        </div>
+        <div class="target-status">
+          <div class="reached">&#10003; Target reached &middot; $800k funded (320%)</div>
+          <div>Collect <b class="gap">$50k</b> from <b>1 committed investor</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -459,6 +625,20 @@
         <span class="sp-name">K&amp;G Capital</span>
         <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $700k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded edge-right" style="left:100%">$1,175k funded</div>
+          <div class="target-marker committed edge-right" style="left:100%">$1,225k committed</div>
+        </div>
+        <div class="target-status">
+          <div class="reached">&#10003; Target reached &middot; $1,175k funded (168%)</div>
+          <div>Collect <b class="gap">$50k</b> from <b>1 committed investor</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
@@ -479,6 +659,20 @@
         <span class="sp-name">Prime Real Ventures</span>
         <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
       </header>
+      <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
+        <div class="target-amounts">
+          <span class="target-amt">Target $250k</span>
+        </div>
+        <div class="target-bar-wrap">
+          <div class="target-bar"></div>
+          <div class="target-marker funded edge-right" style="left:100%">$250k funded</div>
+          <div class="target-marker committed edge-right" style="left:100%">$300k committed</div>
+        </div>
+        <div class="target-status">
+          <div class="reached">&#10003; Target reached &middot; $250k funded (100%)</div>
+          <div>Collect <b class="gap">$50k</b> from <b>1 committed investor</b></div>
+        </div>
+      </div>
       <div class="stage-header">
         <div class="name-col"></div>
         <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Committed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Doc opened</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">4</span><span class="st-spacer"></span><span class="st-label">Fund instr</span><span class="st-num">5</span><span class="st-spacer"></span><span class="st-label">Recv</span><span class="st-num">6</span><span class="st-spacer"></span><span class="st-label">C-signed</span><span class="st-num">7</span></div>
