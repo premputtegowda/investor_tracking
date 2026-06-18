@@ -158,13 +158,13 @@
     .stage-header { display: block; padding: 4px 14px 0; grid-template-columns: none; }
     .stage-header .name-col, .stage-header .daybar-header { display: none; }
     .stage-header .track-header { display: flex; align-items: center; justify-content: space-between; }
-    .st-label { display: none; }
-    .st-num   { display: inline-block; font-size: 11px; font-weight: 700; color: #1f3a5f;
-                width: 16px; text-align: center; flex: 0 0 16px; }
+    .st-label { display: inline-block; font-size: 9px; font-weight: 700; color: #1f3a5f;
+                white-space: nowrap; flex: 0 0 auto; }
+    .st-num   { display: none; }
     .st-spacer { display: inline-block; flex: 1 1 0; }
     .row { grid-template-columns: 1fr; gap: 6px; padding: 8px 10px; }
     .row .name { flex-direction: row; align-items: baseline; gap: 8px; font-size: 13px; }
-    .stage-key { display: flex; }
+    /* Legend hidden on mobile — labels are now in the column headers above the dots. */
     .d-icon { display: none; }
     .d-num { display: inline; font-size: 9px; }
     .dot.future .d-num { color: #777; }
@@ -177,8 +177,8 @@
 <body>
   <div class="container">
     <h1>Investor Tracking</h1>
-    <div class="as-of">As of June 17, 2026 at 10:00 AM PDT</div>
-    <div class="report-note">Please note this is not a real-time report. There may be a delay between the date funds were sent and when the funds were received and updated. The report reflects the data in Cash Flow Portal as of June 17, 2026 at 10:00 AM PDT.</div>
+    <div class="as-of">As of June 17, 2026 at 10:43 PM PDT</div>
+    <div class="report-note">Please note this is not a real-time report. There may be a delay between the date funds were sent and when the funds were received and updated. The report reflects the data in Cash Flow Portal as of June 17, 2026 at 10:43 PM PDT.</div>
     <div class="top-legend">
       <div class="color-key">
         <span class="k"><span class="chip" style="background:#ff8c00"></span>Partial funded</span>
@@ -210,7 +210,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row partial" data-id="A8BYSTIWGI" title="Funding instructions sent">
@@ -279,7 +279,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="15YYXDXRGI" title="Funding instructions sent">
@@ -341,7 +341,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="7XBONBYISX" title="Funding instructions sent">
@@ -389,7 +389,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="3Y7375KEXR" title="Funding instructions sent">
@@ -429,7 +429,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="AHFRHO6WU6" title="Funding instructions sent">
@@ -463,7 +463,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="BJIYOQQ30L" title="Document signing started">
@@ -497,7 +497,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="BHMZLEZDYT" title="Funding instructions sent">
@@ -531,7 +531,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="BQCTQDMKBW" title="Document signing started">
@@ -565,7 +565,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="21PLY1Z6E7" title="Funding instructions sent">
@@ -599,7 +599,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="7RF9EVUXIQ" title="Funding instructions sent">
@@ -633,7 +633,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="5WZXA9FVGY" title="Funding instructions sent">
@@ -666,7 +666,7 @@
       </div>
       <div class="stage-header">
         <div class="name-col"></div>
-        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred uploaded</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
+        <div class="track-header"><span class="st-label">Started</span><span class="st-num">1</span><span class="st-spacer"></span><span class="st-label">Signed</span><span class="st-num">2</span><span class="st-spacer"></span><span class="st-label">Accred</span><span class="st-num">3</span><span class="st-spacer"></span><span class="st-label">Funded</span><span class="st-num">4</span></div>
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="1D5JA2X2UN" title="Document signing started">
