@@ -25,10 +25,14 @@
                     display: flex; flex-wrap: wrap; gap: 6px 14px;
                     align-items: baseline; }
   .sp-name { font-weight: 700; font-size: 14px; color: #0d2240; }
-  .sp-stats { font-size: 12px; color: #444; margin-left: auto; }
-  .sp-stats .gap { color: #a00000; }
-  .sp-togo { font-size: 12px; color: #a00000; margin-left: 0; }
-  .sp-togo b { font-weight: 700; color: #a00000; }
+  .sp-togo { font-size: 13px; color: #a00000; margin-left: 10px;
+              display: inline-flex; align-items: baseline; gap: 4px; }
+  .sp-togo b { font-weight: 800; color: #a00000; font-size: 20px;
+                letter-spacing: -0.5px; }
+  .sp-footer { padding: 6px 14px; font-size: 11px; color: #a00000;
+                text-align: right; font-style: italic;
+                background: rgba(255,255,255,0.55);
+                border-top: 1px solid rgba(0,0,0,0.05); }
 
   /* Header row showing stage labels (desktop only) */
   .stage-header { display: grid;
@@ -48,6 +52,9 @@
          border-top: 1px solid rgba(0,0,0,0.05); }
   .row .name { font-size: 12px; color:#1f1f1f; display:flex; flex-direction:column; }
   .row .name .amt { font-size: 11px; color:#666; }
+  .funding-init { font-size: 9px; color: #1a6b1a; font-style: italic;
+                  font-weight: 600; margin-left: 4px; vertical-align: super;
+                  white-space: nowrap; }
 
   .track { display: flex; align-items: center; }
   .track .line { flex: 1 1 0; height: 2px; background: #cfcfcf; }
@@ -117,7 +124,6 @@
                    gap: 3px; align-items: center; }
   .target-status > div { line-height: 1.4; }
   .target-status b { color: #0d2240; font-weight: 700; }
-  .target-status b.gap { color: #a00000; }
   .target-status .reached { color: #1a6b1a; font-weight: 700; }
 
   /* Investor notes (per-row, backed by Firestore — append-only log) */
@@ -179,8 +185,8 @@
 <body>
   <div class="container">
     <h1>Investor Tracking</h1>
-    <div class="as-of">As of July 06, 2026 at 10:31 AM PDT</div>
-    <div class="report-note">Please note this is not a real-time report. There may be a delay between the date funds were sent and when the funds were received and updated. The report reflects the data in Cash Flow Portal as of July 06, 2026 at 10:31 AM PDT.</div>
+    <div class="as-of">As of July 07, 2026 at 2:00 PM PDT</div>
+    <div class="report-note">Please note this is not a real-time report. There may be a delay between the date funds were sent and when the funds were received and updated. The report reflects the data in Cash Flow Portal as of July 07, 2026 at 2:00 PM PDT.</div>
     <div class="top-legend">
       <div class="color-key">
         <span class="k"><span class="chip" style="background:#ff8c00"></span>Partial funded</span>
@@ -193,8 +199,7 @@
     
     <section class="sponsor" style="--lane-color:#e8eded">
       <header>
-        <span class="sp-name">Manka Capital, Chirag Chaudhari</span><span class="sp-togo"><b>$1.0M</b> to 🎯</span>
-        <span class="sp-stats"><b class="gap">$45k gap</b> · 2 to follow up</span>
+        <span class="sp-name">Chirag Chaudhari</span><span class="sp-togo"><b>$1.1M</b> to 🎯</span>
       </header>
       <div class="target-section" style="--start-color: hsl(36, 71%, 47%)">
         <div class="target-amounts">
@@ -206,8 +211,7 @@
           <div class="target-marker committed" style="left:33.0%">$495k committed</div>
         </div>
         <div class="target-status">
-          <div>Collect <b class="gap">$45k</b> from <b>2 committed investors</b></div>
-          <div>Raise <b>$1,005k</b> from new investors</div>
+          
         </div>
       </div>
       <div class="stage-header">
@@ -216,25 +220,26 @@
         <div class="daybar-header">Days waiting</div>
       </div>
       <div class="row unfunded" data-id="DCWHDS49EV" title="Funding instructions sent">
-        <div class="name">Joshua Moskovitz<span class="amt">$25k</span></div>
+        <div class="name">Joshua Moskovitz<sup class="funding-init">Funding initiated on 07/02/2026</sup><span class="amt">$25k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:4.9%"></div></div>
-          <span class="days-label">6d</span>
+          <div class="daybar-track"><div class="daybar" style="width:5.6%"></div></div>
+          <span class="days-label">7d</span>
         </div>
       </div><div class="row unfunded" data-id="5WZXA9FVGY" title="Funding instructions sent">
         <div class="name">Chirag Chaudhari<span class="amt">$20k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:81.3%"></div></div>
-          <span class="days-label">100d</span>
+          <div class="daybar-track"><div class="daybar" style="width:81.5%"></div></div>
+          <span class="days-label">101d</span>
         </div>
       </div>
+      <div class="sp-footer">$45k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#ede8e3">
       <header>
-        <span class="sp-name">Sai Capital Llc</span><span class="sp-togo"><b>$500k</b> to 🎯</span>
+        <span class="sp-name">Aarati Sawhney</span><span class="sp-togo"><b>$500k</b> to 🎯</span>
       </header>
       <div class="target-section" style="--start-color: hsl(80, 65%, 43%)">
         <div class="target-amounts">
@@ -246,15 +251,14 @@
           <div class="target-marker committed" style="left:66.7%">$1,000k committed</div>
         </div>
         <div class="target-status">
-          <div>Raise <b>$500k</b> from new investors</div>
+          
         </div>
       </div>
     </section>
 
     <section class="sponsor" style="--lane-color:#e8eaed">
       <header>
-        <span class="sp-name">New Horizon Capital Group</span><span class="sp-togo"><b>$350k</b> to 🎯</span>
-        <span class="sp-stats"><b class="gap">$75k gap</b> · 1 to follow up</span>
+        <span class="sp-name">Anisha Roussel</span><span class="sp-togo"><b>$425k</b> to 🎯</span>
       </header>
       <div class="target-section" style="--start-color: hsl(18, 73%, 48%)">
         <div class="target-amounts">
@@ -266,8 +270,7 @@
           <div class="target-marker committed" style="left:30.0%">$150k committed</div>
         </div>
         <div class="target-status">
-          <div>Collect <b class="gap">$75k</b> from <b>1 committed investor</b></div>
-          <div>Raise <b>$350k</b> from new investors</div>
+          
         </div>
       </div>
       <div class="stage-header">
@@ -279,16 +282,16 @@
         <div class="name">Jason Levy<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:39.8%"></div></div>
-          <span class="days-label">49d</span>
+          <div class="daybar-track"><div class="daybar" style="width:40.3%"></div></div>
+          <span class="days-label">50d</span>
         </div>
       </div>
+      <div class="sp-footer">$75k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#ede8eb">
       <header>
-        <span class="sp-name">Prysm2025</span><span class="sp-togo"><b>$225k</b> to 🎯</span>
-        <span class="sp-stats"><b class="gap">$100k gap</b> · 2 to follow up</span>
+        <span class="sp-name">Merrell Sami</span><span class="sp-togo"><b>$325k</b> to 🎯</span>
       </header>
       <div class="target-section" style="--start-color: hsl(42, 70%, 46%)">
         <div class="target-amounts">
@@ -300,8 +303,7 @@
           <div class="target-marker committed" style="left:55.0%">$275k committed</div>
         </div>
         <div class="target-status">
-          <div>Collect <b class="gap">$100k</b> from <b>2 committed investors</b></div>
-          <div>Raise <b>$225k</b> from new investors</div>
+          
         </div>
       </div>
       <div class="stage-header">
@@ -314,22 +316,22 @@
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
           <div class="daybar-track"><div class="daybar" style="width:97.6%"></div></div>
-          <span class="days-label">120d</span>
+          <span class="days-label">121d</span>
         </div>
       </div><div class="row unfunded" data-id="5UO12OK8C5" title="Funding instructions sent">
         <div class="name">Merrell Sami<span class="amt">$25k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:61.0%"></div></div>
-          <span class="days-label">75d</span>
+          <div class="daybar-track"><div class="daybar" style="width:61.3%"></div></div>
+          <span class="days-label">76d</span>
         </div>
       </div>
+      <div class="sp-footer">$100k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#eaedeb">
       <header>
-        <span class="sp-name">Optic Point</span><span class="sp-togo"><b>$95k</b> to 🎯</span>
-        <span class="sp-stats"><b class="gap">$0k gap</b> · 1 to follow up</span>
+        <span class="sp-name">Jessica Han</span><span class="sp-togo"><b>$95k</b> to 🎯</span>
       </header>
       <div class="target-section" style="--start-color: hsl(74, 66%, 44%)">
         <div class="target-amounts">
@@ -341,7 +343,7 @@
           <div class="target-marker committed" style="left:62.0%">$155k committed</div>
         </div>
         <div class="target-status">
-          <div>Raise <b>$95k</b> from new investors</div>
+          
         </div>
       </div>
       <div class="stage-header">
@@ -353,16 +355,16 @@
         <div class="name">Janice Lee<span class="amt">$0k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:56.9%"></div></div>
-          <span class="days-label">70d</span>
+          <div class="daybar-track"><div class="daybar" style="width:57.3%"></div></div>
+          <span class="days-label">71d</span>
         </div>
       </div>
+      
     </section>
 
     <section class="sponsor" style="--lane-color:#edebe6">
       <header>
-        <span class="sp-name">Mattanza Capital Partners</span><span class="sp-togo"><b>$10k</b> to 🎯</span>
-        <span class="sp-stats"><b class="gap">$470k gap</b> · 5 to follow up</span>
+        <span class="sp-name">Mattanza Capital Partners</span><span class="sp-togo"><b>$480k</b> to 🎯</span>
       </header>
       <div class="target-section" style="--start-color: hsl(82, 65%, 43%)">
         <div class="target-amounts">
@@ -374,8 +376,7 @@
           <div class="target-marker committed" style="left:99.3%">$1,490k committed</div>
         </div>
         <div class="target-status">
-          <div>Collect <b class="gap">$470k</b> from <b>5 committed investors</b></div>
-          <div>Raise <b>$10k</b> from new investors</div>
+          
         </div>
       </div>
       <div class="stage-header">
@@ -388,43 +389,43 @@
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
           <div class="daybar-track"><div class="daybar" style="width:100.0%"></div></div>
-          <span class="days-label">123d</span>
+          <span class="days-label">124d</span>
         </div>
       </div><div class="row unfunded" data-id="7ZQWDUKKDG" title="Funding instructions sent">
         <div class="name">Matthew Del Giudice<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:16.3%"></div></div>
-          <span class="days-label">20d</span>
+          <div class="daybar-track"><div class="daybar" style="width:16.9%"></div></div>
+          <span class="days-label">21d</span>
         </div>
       </div><div class="row unfunded" data-id="3YKLZMATJD" title="Committed">
         <div class="name">Carla Haller<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
           <div class="daybar-track"><div class="daybar" style="width:100.0%"></div></div>
-          <span class="days-label">123d</span>
+          <span class="days-label">124d</span>
         </div>
       </div><div class="row unfunded" data-id="DCIUMRCM3N" title="Committed">
         <div class="name">Chris Werry<span class="amt">$100k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
           <div class="daybar-track"><div class="daybar" style="width:97.6%"></div></div>
-          <span class="days-label">120d</span>
+          <span class="days-label">121d</span>
         </div>
       </div><div class="row unfunded" data-id="6E6H05U1HL" title="Document signing started">
         <div class="name">Matthew Rice<span class="amt">$50k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:94.3%"></div></div>
-          <span class="days-label">116d</span>
+          <div class="daybar-track"><div class="daybar" style="width:94.4%"></div></div>
+          <span class="days-label">117d</span>
         </div>
       </div>
+      <div class="sp-footer">$470k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#ebe9e6">
       <header>
-        <span class="sp-name">Fast Fire Capital Llc</span>
-        <span class="sp-stats"><b class="gap">$375k gap</b> · 4 to follow up</span>
+        <span class="sp-name">Kenji Asakura</span><span class="sp-togo"><b>$295k</b> to 🎯</span>
       </header>
       <div class="target-section" style="--start-color: hsl(96, 63%, 42%)">
         <div class="target-amounts">
@@ -436,7 +437,7 @@
           <div class="target-marker committed edge-right" style="left:100%">$1,580k committed</div>
         </div>
         <div class="target-status">
-          <div>Collect <b class="gap">$375k</b> from <b>4 committed investors</b></div>
+          
         </div>
       </div>
       <div class="stage-header">
@@ -448,37 +449,37 @@
         <div class="name">Kenji Asakura<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:39.0%"></div></div>
-          <span class="days-label">48d</span>
+          <div class="daybar-track"><div class="daybar" style="width:39.5%"></div></div>
+          <span class="days-label">49d</span>
         </div>
       </div><div class="row unfunded" data-id="20ELCCTLUW" title="Funding instructions sent">
-        <div class="name">Jeffrey Collins<span class="amt">$75k</span></div>
+        <div class="name">Jeffrey Collins<sup class="funding-init">Funding initiated on 07/02/2026</sup><span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:13.0%"></div></div>
-          <span class="days-label">16d</span>
+          <div class="daybar-track"><div class="daybar" style="width:13.7%"></div></div>
+          <span class="days-label">17d</span>
         </div>
       </div><div class="row unfunded" data-id="DWU2LDHDLU" title="Committed">
         <div class="name">Pallavi Kamra<span class="amt">$75k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
           <div class="daybar-track"><div class="daybar" style="width:100.0%"></div></div>
-          <span class="days-label">123d</span>
+          <span class="days-label">124d</span>
         </div>
       </div><div class="row unfunded" data-id="6P75WLBKE5" title="Committed">
         <div class="name">Heide Rodgers<span class="amt">$150k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
           <div class="daybar-track"><div class="daybar" style="width:100.0%"></div></div>
-          <span class="days-label">123d</span>
+          <span class="days-label">124d</span>
         </div>
       </div>
+      <div class="sp-footer">$375k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#ebebeb">
       <header>
-        <span class="sp-name">Alara Equity Llc</span>
-        <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
+        <span class="sp-name">Ahsan Jaffar</span>
       </header>
       <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
         <div class="target-amounts">
@@ -491,7 +492,6 @@
         </div>
         <div class="target-status">
           <div class="reached">&#10003; Target reached &middot; $550k funded (220%)</div>
-          <div>Collect <b class="gap">$50k</b> from <b>1 committed investor</b></div>
         </div>
       </div>
       <div class="stage-header">
@@ -503,16 +503,16 @@
         <div class="name">Tawfik Hamati<span class="amt">$50k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:48.0%"></div></div>
-          <span class="days-label">59d</span>
+          <div class="daybar-track"><div class="daybar" style="width:48.4%"></div></div>
+          <span class="days-label">60d</span>
         </div>
       </div>
+      <div class="sp-footer">$50k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#ede5e5">
       <header>
-        <span class="sp-name">Prime Real Ventures</span>
-        <span class="sp-stats"><b class="gap">$50k gap</b> · 1 to follow up</span>
+        <span class="sp-name">Saad Muhammad</span>
       </header>
       <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
         <div class="target-amounts">
@@ -525,7 +525,6 @@
         </div>
         <div class="target-status">
           <div class="reached">&#10003; Target reached &middot; $300k funded (120%)</div>
-          <div>Collect <b class="gap">$50k</b> from <b>1 committed investor</b></div>
         </div>
       </div>
       <div class="stage-header">
@@ -537,16 +536,16 @@
         <div class="name">Hassan Kaleem #2<span class="amt">$50k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:88.6%"></div></div>
-          <span class="days-label">109d</span>
+          <div class="daybar-track"><div class="daybar" style="width:88.7%"></div></div>
+          <span class="days-label">110d</span>
         </div>
       </div>
+      <div class="sp-footer">$50k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#e5e8ed">
       <header>
         <span class="sp-name">K&amp;G Capital</span>
-        <span class="sp-stats"><b class="gap">$40k gap</b> · 1 to follow up</span>
       </header>
       <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
         <div class="target-amounts">
@@ -559,7 +558,6 @@
         </div>
         <div class="target-status">
           <div class="reached">&#10003; Target reached &middot; $1,175k funded (168%)</div>
-          <div>Collect <b class="gap">$40k</b> from <b>1 committed investor</b></div>
         </div>
       </div>
       <div class="stage-header">
@@ -571,15 +569,16 @@
         <div class="name">Ankush Ratwani<span class="amt">$40k</span></div>
         <div class="track"><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot done">&#10003;</div><div class="line"></div><div class="dot future"></div></div>
         <div class="daybar-wrap">
-          <div class="daybar-track"><div class="daybar" style="width:39.0%"></div></div>
-          <span class="days-label">48d</span>
+          <div class="daybar-track"><div class="daybar" style="width:39.5%"></div></div>
+          <span class="days-label">49d</span>
         </div>
       </div>
+      <div class="sp-footer">$40k in uncollected funds</div>
     </section>
 
     <section class="sponsor" style="--lane-color:#e8ede5">
       <header>
-        <span class="sp-name">Bh Group</span>
+        <span class="sp-name">Genna Hirsh and Ben Hirsh</span>
       </header>
       <div class="target-section" style="--start-color: hsl(120, 60%, 40%)">
         <div class="target-amounts">
